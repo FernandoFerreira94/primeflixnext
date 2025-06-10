@@ -1,12 +1,12 @@
 const API_URL = process.env.NEXT_PUBLIC_TMDB_API_URL;
 const API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
 
-if (!API_URL || !API_KEY) {
-  throw new Error("API_URL ou API_KEY não definido");
-}
-
 // Função para buscar os filmes em cartaz
 export async function getMovies() {
+  if (!API_URL || !API_KEY) {
+    console.error("API_URL ou API_KEY não definido");
+    return [];
+  }
   try {
     const response = await fetch(
       `${API_URL}/movie/now_playing?api_key=${API_KEY}&language=pt-BR`
@@ -26,8 +26,8 @@ export async function getMovies() {
 
 // Função para buscar detalhes de um filme
 export async function getMovieDetails(id: number) {
-  if (!id) {
-    console.error("ID do filme não fornecido");
+  if (!API_URL || !API_KEY) {
+    console.error("API_URL ou API_KEY não definido");
     return null;
   }
 
