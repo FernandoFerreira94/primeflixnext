@@ -2,15 +2,15 @@ import Image from "next/image";
 import { getMovieDetails } from "@/utils/actions/api";
 import { MoviesProps } from "@/utils/type";
 import Link from "next/link";
+interface ServicesPageProps {
+  params: Promise<{ id: string }>;
+}
 
-export default async function MovieDetails({
-  params,
-}: {
-  params: { id: number };
-}) {
-  const { id } = await params;
+export default async function MovieDetails(props: ServicesPageProps) {
+  const { id } = await props.params; // <-- aqui você "resolve" a promise
+  const numId = Number(id);
 
-  const movieId: MoviesProps = await getMovieDetails(id);
+  const movieId: MoviesProps = await getMovieDetails(numId);
   return (
     <main className="w-full flex justify-center mt-20">
       <div
