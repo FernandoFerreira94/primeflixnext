@@ -32,7 +32,7 @@ export default async function MovieTop({ qtdMin, qtdMax, text }: QtdProps) {
                 "
                 >
                   <Image
-                    src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${movie.backdrop_path}`}
+                    src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
                     alt="Imagem de fundo"
                     quality={100}
                     priority={true}

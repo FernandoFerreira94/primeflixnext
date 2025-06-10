@@ -3,10 +3,10 @@ import axios from "axios";
 export async function getMovies() {
   try {
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/movie/now_playing`,
+      `${process.env.NEXT_PUBLIC_TMDB_API_URL}/movie/now_playing`,
       {
         params: {
-          api_key: process.env.NEXT_PUBLIC_API_KEY,
+          api_key: process.env.NEXT_PUBLIC_TMDB_API_KEY,
         },
       }
     );
@@ -21,11 +21,11 @@ export async function getMovies() {
 export async function getMovieDetails(id: number) {
   try {
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/movie/${id}
+      `${process.env.NEXT_PUBLIC_TMDB_API_URL}/movie/${id}
       `,
       {
         params: {
-          api_key: process.env.NEXT_PUBLIC_API_KEY,
+          api_key: process.env.NEXT_PUBLIC_TMDB_API_KEY,
           language: "pt-BR",
         },
       }

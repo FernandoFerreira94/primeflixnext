@@ -26,7 +26,7 @@ export default async function MovieDetails(props: ServicesPageProps) {
           <Image
             height={500}
             width={500}
-            src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${movieId.poster_path}`}
+            src={`https://image.tmdb.org/t/p/original/${movieId.poster_path}`}
             alt="Image do filme"
             quality={100}
             priority={true}
