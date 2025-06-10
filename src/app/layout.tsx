@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Primeflix - Movies",
     description: "Descubra os melhores filmes!",
-    url: "https://seusite.com",
+    url: "https://primeflixnext.vercel.app/",
     siteName: "Primeflix",
     images: [
       {
-        url: "https://seusite.com/imagem.jpg", // URL da imagem
+        url: "https://primeflixnext.vercel.app/imagem.jpg", // URL da imagem
         width: 1200,
         height: 630,
         alt: "Banner do Primeflix",
