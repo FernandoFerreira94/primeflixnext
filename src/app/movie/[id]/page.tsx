@@ -12,7 +12,7 @@ export default async function MovieDetails(props: ServicesPageProps) {
 
   const movieId: MoviesProps = await getMovieDetails(numId);
   return (
-    <main className="w-full flex justify-center mt-20">
+    <main className="w-full flex justify-center mt-20 min-h-dvh">
       <div
         className="container flex h-full 
       max-sm:flex-col max-sm:items-center
